@@ -1,35 +1,37 @@
 import React, { Component} from 'react';
 import './App.css';
 import Card from './Card/Card';
+import Collection from './Card/Collection';
 import DrawButton from './DrawButton/DrawButton';
-import Draw from './DrawButton/DrawButton';
+import axios from 'axios'
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.updateCard = this.updateCard.bind(this);
 
     this.state = {
-      cards: [
-        {id: 1, Word: "state", Definition: "JS object that holds values for a component"},
-        {id: 2, Word: "props", Definition: "A way to pass data into components on initialization"},
-      ],
+      collection: [],
+      cards: [],
       currentCard: {}
     }
   }
 
-  componentWillMount() { 
-    const currentCards = this.state.cards;
+  async componentDidMount() { 
+    let userData = await axios.get('https://localhost:44393/api/collection')
+    .then(Response =>{return Response.data})
+    const currentCards = userData[0];
     
     this.setState({
+      collection: userData,
       cards: currentCards,
       currentCard: this.getRandomCard(currentCards)
     })
   }
 
   getRandomCard(currentCards) {
-    var card = currentCards[Math.floor(Math.random() * currentCards.length)]
+    var set = currentCards.cards
+    var card = currentCards.cards[Math.floor(Math.random() * set.length)]
     return(card)
   }
 
@@ -44,8 +46,8 @@ class App extends Component {
       return (
       <div className="App">
         <div className = "cardRow">
-          <Card Word = {this.state.currentCard.Word} 
-              Definition = {this.state.currentCard.Definition}
+          <Card word = {this.state.currentCard.word} 
+                definition = {this.state.currentCard.definition}
               />
         </div>
         <div className = "buttonRow">
