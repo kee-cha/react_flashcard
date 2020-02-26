@@ -106,9 +106,9 @@ class App extends Component {
     }
     if (this.state.collection.length > 0) {
       return (
-        <div>
+        <div className = "flashcards">
           <Collection set={this.state.collection} onClick={i => this.getCardSet(i)} />
-          <div>{element}</div>
+          <div className ="cardSet">{element}</div>
         </div>
       )
     } else {

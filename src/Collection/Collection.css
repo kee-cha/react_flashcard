@@ -1,0 +1,20 @@
+.collection-container {
+    height: 315px;
+    width: 150px;
+    border: 1px solid #300;
+}
+
+.collection {
+    height: 75px;
+    width: 125px;
+    border: 1px solid #300;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+.title {
+    margin-top: 25px;
+}
