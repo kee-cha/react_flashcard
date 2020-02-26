@@ -1,0 +1,28 @@
+.newCard-container {
+    height: 400px;
+    width: 600px;
+    perspective: 900px;
+    position: relative;
+    margin: auto;
+    transition: ease-in;
+}
+.newCard {
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    border: 1px solid #300;
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+}
+.word {
+    color: #333;
+    font-size: 2.3em;
+    padding-top: 25%;
+    
+}
+
+.definition {
+   color: #333;
+   font-size: 2.3em;
+   padding-top: 25%;
+}

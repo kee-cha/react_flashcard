@@ -1,7 +1,7 @@
 .card-container {
     cursor: pointer;
     height: 400px;
-    width: 400px;
+    width: 600px;
     perspective: 900px;
     position: relative;
     margin: auto;
@@ -10,7 +10,7 @@
 
 .card {
     height: 400px;
-    width: 400px;
+    width: 600px;
     position: absolute;
     border: 1px solid #300;
     transform-style: preserve-3d;
@@ -23,7 +23,7 @@
 
  .card .front {
      height: 400px;
-     width: 400px;
+     width: 600px;
      backface-visibility: hidden;
      position: absolute;
      overflow: hidden;
@@ -33,7 +33,7 @@
 
  .card .back {
      height: 400px;
-     width: 400px;
+     width: 600px;
      text-align: center;
      transform: rotateY(180deg);
  }
@@ -41,12 +41,12 @@
  .word {
      color: #333;
      font-size: 2.3em;
-     padding-top: 40%;
+     padding-top: 25%;
      
  }
 
  .definition {
     color: #333;
     font-size: 2.3em;
-    padding-top: 40%;
+    padding-top: 25%;
  }
